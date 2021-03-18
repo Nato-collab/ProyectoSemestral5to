@@ -5,14 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public SaveData SD;
-    public int HS;
+    public int score;
     // Start is called before the first frame update
     void Start()
     {
         SD.Cargar();
         //SD.Data.HighScore = 0;
-        HS = SD.Data.HighScore;
-        print("high score:" + HS);
+        score = 0;
     }
 
     private void OnApplicationQuit()
@@ -23,9 +22,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HS > SD.Data.HighScore) {
-            print("nuevo high score:" + HS);
-            SD.Data.HighScore = HS;
+        if (score > SD.Data.HighScore)
+        {
+            print("nuevo high score: " + score);
+            SD.Data.HighScore = score;
         }
     }
 }
