@@ -15,18 +15,19 @@ public class UI_in_game : MonoBehaviour
         if (gameManager == null) {
             gameManager=GameObject.FindGameObjectWithTag("GameController").gameObject.GetComponent<GameManager>();
         }
-        HScore.text ="High Score: " + gameManager.SD.Data.HighScore.ToString();
+
+        HScore.text ="High Score: " + gameManager.SD.Data.HighScore.ToString();// obtenenr high score gaurdado
     }
 
     // Update is called once per frame
     void Update()
     {
         if (score.text != "Score: " + gameManager.score.ToString()) {
-            score.text = "Score: " + gameManager.score.ToString();
+            score.text = "Score: " + gameManager.score.ToString();//acutalizar el valor del score
         }
         if (HScore.text != "High Score: " + gameManager.SD.Data.HighScore.ToString())
         {
-            HScore.text = "High Score: " + gameManager.SD.Data.HighScore.ToString();
+            HScore.text = "High Score: " + gameManager.SD.Data.HighScore.ToString();//acutalizar el valor del high score
         }
     }
 }

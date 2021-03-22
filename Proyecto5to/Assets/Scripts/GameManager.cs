@@ -9,14 +9,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SD.Cargar();
+        SD.Cargar();//obtnener datos guardados
         //SD.Data.HighScore = 0;
         score = 0;
     }
 
     private void OnApplicationQuit()
     {
-        SD.Guardar();
+        SD.Guardar();//guardar los datos cuando se cierra el juego
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         if (score > SD.Data.HighScore)
         {
             print("nuevo high score: " + score);
-            SD.Data.HighScore = score;
+            SD.Data.HighScore = score;//actualizar el highscore guardado cuando sea menor que el score
         }
     }
 }

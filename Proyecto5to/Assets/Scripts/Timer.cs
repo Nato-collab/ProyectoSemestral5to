@@ -36,12 +36,12 @@ public class Timer : MonoBehaviour
     {
         timeToDisplay += 1;
 
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);//calcular los minutos
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);//calcular los segundos
 
         if(timeText != null)
         {
-            timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);// mandar el tiempo en formato minutos : segundos
         }
         print(string.Format("{0:00}:{1:00}", minutes, seconds));
     }
