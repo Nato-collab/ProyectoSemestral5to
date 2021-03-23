@@ -893,6 +893,15 @@
     <Reference Include="com.unity.multiplayer-hlapi.Runtime">
       <HintPath>D:/cachi2/Documents/GitHub/ProyectoSemestral5to/Proyecto5to/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit">
+      <HintPath>D:/cachi2/Documents/GitHub/ProyectoSemestral5to/Proyecto5to/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.XR.Interaction.Toolkit.Editor">
+      <HintPath>D:/cachi2/Documents/GitHub/ProyectoSemestral5to/Proyecto5to/Library/ScriptAssemblies/Unity.XR.Interaction.Toolkit.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>D:/cachi2/Documents/GitHub/ProyectoSemestral5to/Proyecto5to/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Oculus.Platform.Editor.csproj">
