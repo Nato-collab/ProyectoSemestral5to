@@ -222,6 +222,7 @@
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\UI_in_game.cs" />
     <Compile Include="Assets\Scripts\emisor_liquido.cs" />
+    <Compile Include="Assets\Scripts\gota.cs" />
     <Compile Include="Assets\TirgamesAssets\Utility\Scripts\TGUtilsAnimatedTexture.cs" />
     <Compile Include="Assets\TirgamesAssets\Utility\Scripts\TGUtilsAnimatorPeriodParam.cs" />
     <Compile Include="Assets\TirgamesAssets\Utility\Scripts\TGUtilsMaterialInstance.cs" />
