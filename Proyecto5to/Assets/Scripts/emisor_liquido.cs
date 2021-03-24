@@ -7,13 +7,13 @@ public class emisor_liquido : MonoBehaviour
     public GameObject gota;
     public GameObject instance;
     public GameObject[] instances;
-    public int instances_index;
     public float tiempo=0;
     public float frecuencia; //frecuencia en que se lanzan las gotas
     public float tamaño_gota;
     public float radio_lanzamiento;//cuanto va avariar la pocición de lanzamiento de la gota
     public int max_gotas;//número máximo de gotas
     public bool emitir;
+    private int instances_index;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class emisor_liquido : MonoBehaviour
     }
 
     public void LanzarGota() {
-        instance=Instantiate(gota);
+        instance=Instantiate(gota,transform);
         instance.transform.position = new Vector3(Random.Range(-radio_lanzamiento,radio_lanzamiento)+transform.position.x,transform.position.y, Random.Range(-radio_lanzamiento, radio_lanzamiento)+transform.position.z);
         instance.transform.localScale = Vector3.one * tamaño_gota;
         try
