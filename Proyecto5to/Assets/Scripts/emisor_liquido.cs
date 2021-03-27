@@ -13,8 +13,8 @@ public class emisor_liquido : MonoBehaviour
     public float radio_lanzamiento;//cuanto va avariar la pocición de lanzamiento de la gota
     public int max_gotas;//número máximo de gotas
     public bool emitir;
+    public bool pool_in;
     private int instances_index;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -26,8 +26,26 @@ public class emisor_liquido : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void detenerEmision() {
         emitir = false;
+        instances_index = 0;
+        if (pool_in) {
+            Invoke("RelanzarGota", 2f);
+        }
+    }
+
+    public void RelanzarGota() {
+        if (instances[instances_index] == null) {
+            return;
+        }
+        instances[instances_index].transform.position = new Vector3(Random.Range(-radio_lanzamiento, radio_lanzamiento) + transform.position.x, transform.position.y, Random.Range(-radio_lanzamiento, radio_lanzamiento) + transform.position.z);
+        instances[instances_index].GetComponent<gota>().col.enabled = false;
+        instances[instances_index].GetComponent<gota>().rigi.isKinematic=false;
+        instances_index++;
+        if (instances_index < instances.Length) {
+            Invoke("RelanzarGota", frecuencia);
+        }
     }
 
     public void LanzarGota() {

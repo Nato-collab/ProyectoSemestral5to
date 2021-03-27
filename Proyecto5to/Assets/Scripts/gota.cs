@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class gota : MonoBehaviour
 {
-    Collider col;
+    public Collider col;
+    public Rigidbody rigi;
     // Start is called before the first frame update
     void Start()
     {
         col = gameObject.GetComponent<Collider>();
+        rigi = gameObject.GetComponent<Rigidbody>();
         col.enabled = false;
+        rigi.isKinematic=false;
     }
 
-    // Update is called once per frame
+    private void Update()
+    {
+        /*if (rigi.velocity == Vector3.zero) {
+            rigi.isKinematic = true;
+        }*/
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("vaso")) {
