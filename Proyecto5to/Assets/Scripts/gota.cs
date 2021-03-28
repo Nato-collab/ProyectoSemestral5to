@@ -6,13 +6,14 @@ public class gota : MonoBehaviour
 {
     public Collider col;
     public Rigidbody rigi;
+    public bool emitida;
     // Start is called before the first frame update
     void Start()
     {
         col = gameObject.GetComponent<Collider>();
         rigi = gameObject.GetComponent<Rigidbody>();
         col.enabled = false;
-        rigi.isKinematic=false;
+        rigi.isKinematic=true;
     }
 
     private void Update()
@@ -20,6 +21,13 @@ public class gota : MonoBehaviour
         /*if (rigi.velocity == Vector3.zero) {
             rigi.isKinematic = true;
         }*/
+    }
+
+    public void pool_out() {
+        transform.localPosition = Vector3.zero;
+        emitida = false;
+        col.enabled = false;
+        rigi.isKinematic = true;
     }
 
     private void OnTriggerEnter(Collider other)
