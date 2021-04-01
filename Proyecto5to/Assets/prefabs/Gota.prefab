@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6165916832787445008}
   - component: {fileID: 5680972678210998080}
-  - component: {fileID: 7447546557750015212}
   - component: {fileID: 5400554918972257694}
   - component: {fileID: 6198629897583050179}
   - component: {fileID: 1211008540}
@@ -45,45 +44,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6786527645565890655}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &7447546557750015212
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6786527645565890655}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 2012972db59d0094b9376bedf6c85cb4, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!114 &5400554918972257694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,8 +56,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d965abc75a3cf4e9dfb49dc3d8d660, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  col: {fileID: 0}
-  rigi: {fileID: 0}
+  col: {fileID: 6198629897583050179}
+  rigi: {fileID: 1211008540}
+  emitida: 0
+  mesh: {fileID: 8431279440130469025}
 --- !u!135 &6198629897583050179
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -126,7 +88,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 2
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 3
 --- !u!135 &6901995093141570939
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -187,7 +149,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7151429908636696255}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

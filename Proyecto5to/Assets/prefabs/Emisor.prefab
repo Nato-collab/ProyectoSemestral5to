@@ -45,12 +45,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emitir: 0
   pause_emit: 0
+  stop_emit: 0
+  color_gota: {r: 0, g: 0, b: 0, a: 0}
   gota: {fileID: 6786527645565890655, guid: 81f7a98e56ef94c4cb210179961d7d6a, type: 3}
   tiempo: 2
   frecuencia: 0.000001
   "tama\xF1o_gota": 0.6
   radio_lanzamiento: 0.2
-  max_gotas: 410
+  max_gotas: 1000
   pool_in: 0
-  instance: {fileID: 0}
-  instances: []

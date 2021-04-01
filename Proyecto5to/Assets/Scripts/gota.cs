@@ -7,13 +7,19 @@ public class gota : MonoBehaviour
     public Collider col;
     public Rigidbody rigi;
     public bool emitida;
+    public MeshRenderer mesh;
+
     // Start is called before the first frame update
     void Start()
     {
         col = gameObject.GetComponent<Collider>();
         rigi = gameObject.GetComponent<Rigidbody>();
+        mesh=GetComponentInChildren<MeshRenderer>();
+        mesh.enabled = false;
         col.enabled = false;
+        emitida = false;
         rigi.isKinematic=true;
+        rigi.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
     }
 
     private void Update()
@@ -24,6 +30,7 @@ public class gota : MonoBehaviour
     }
 
     public void pool_out() {
+        mesh.enabled = false;
         transform.localPosition = Vector3.zero;
         emitida = false;
         col.enabled = false;
