@@ -24383,7 +24383,7 @@ PrefabInstance:
     - target: {fileID: 5994343202070007836, guid: e36c4790fb9a6c9408dd066a44625c38,
         type: 3}
       propertyPath: "tama\xF1o_gota"
-      value: 0.6
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e36c4790fb9a6c9408dd066a44625c38, type: 3}
@@ -24407,7 +24407,7 @@ PrefabInstance:
     - target: {fileID: 2158398240010819232, guid: 06b5a7e0d721fee46bbc52fe3e7dfff9,
         type: 3}
       propertyPath: "tama\xF1o_gota"
-      value: 0.6
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 2158398240010819233, guid: 06b5a7e0d721fee46bbc52fe3e7dfff9,
         type: 3}
