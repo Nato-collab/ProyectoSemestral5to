@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public SaveData SD;
     public int score;
+    public int spill_penalty;
     // Start is called before the first frame update
     void Start()
     {

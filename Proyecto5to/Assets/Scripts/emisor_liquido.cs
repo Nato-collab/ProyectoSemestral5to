@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class emisor_liquido : MonoBehaviour
 {
+    public string tipo_liquido;
+    public int gotas_emitidas=0;
+    public int gotas_emit_goal = 60;
     public bool emitir;
     public bool pause_emit;
     public bool stop_emit;
@@ -31,6 +34,7 @@ public class emisor_liquido : MonoBehaviour
         emitir = false;
         pause_emit = false;
         instances_index = 0;
+        gotas_emitidas = 0;
         //Invoke("detenerEmision", tiempo);
     }
 
@@ -51,8 +55,8 @@ public class emisor_liquido : MonoBehaviour
 
     void detenerEmision() {
         emitir = false;
+        gotas_emitidas = 0;
         instances_index = 0;
-        pool_out();
     }
 
     public void pool_out() {
@@ -69,7 +73,9 @@ public class emisor_liquido : MonoBehaviour
             emitir = false;
             return;
         }
-        print("pass");
+        if (gotas_emitidas >= gotas_emit_goal) {
+            stop_emit = true;
+        }
         if (instances[instances_index] == null) {
 
             instances[instances_index] = Instantiate(gota);
@@ -78,8 +84,10 @@ public class emisor_liquido : MonoBehaviour
         scr_gota = instances[instances_index].GetComponent<gota>();
         if (scr_gota.emitida == false)
         {
+            gotas_emitidas++;
             scr_gota.col.enabled = false;
             scr_gota.mesh.enabled = true;
+            scr_gota.transform.tag = tipo_liquido;
             instances[instances_index].transform.position = new Vector3(Random.Range(-radio_lanzamiento, radio_lanzamiento) + transform.position.x, transform.position.y, Random.Range(-radio_lanzamiento, radio_lanzamiento) + transform.position.z);
             instances[instances_index].transform.localScale = Vector3.one * tamaño_gota;
             if (instances[instances_index].GetComponentInChildren<MeshRenderer>().material.GetColor("Color_A") != color_gota) {

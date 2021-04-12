@@ -228,7 +228,9 @@
     <Compile Include="Assets\Scripts\UI_in_game.cs" />
     <Compile Include="Assets\Scripts\botella.cs" />
     <Compile Include="Assets\Scripts\emisor_liquido.cs" />
+    <Compile Include="Assets\Scripts\floor.cs" />
     <Compile Include="Assets\Scripts\gota.cs" />
+    <Compile Include="Assets\Scripts\vaso.cs" />
     <None Include="Assets\Resources\TirgamesAssets\Utility\ReadMeTGUtility.txt" />
     <None Include="Assets\Oculus\SampleFramework\Usage\HandsTrainExample\Shaders\XingLightShader.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarMaterialStateShader.cginc" />

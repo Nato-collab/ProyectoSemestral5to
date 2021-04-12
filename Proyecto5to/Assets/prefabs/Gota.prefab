@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6198629897583050179}
   - component: {fileID: 1211008540}
   - component: {fileID: 6901995093141570939}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Gota
   m_TagString: gota
   m_Icon: {fileID: 0}
@@ -59,6 +59,7 @@ MonoBehaviour:
   col: {fileID: 6198629897583050179}
   rigi: {fileID: 1211008540}
   emitida: 0
+  tipo_liquido: 
   mesh: {fileID: 8431279440130469025}
 --- !u!135 &6198629897583050179
 SphereCollider:

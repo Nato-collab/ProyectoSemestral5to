@@ -39,7 +39,7 @@ public class gota : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("vaso")) {
+        if (other.transform.CompareTag("vaso")|| other.transform.CompareTag("floor")) {
             col.enabled = true;
         }
     }
