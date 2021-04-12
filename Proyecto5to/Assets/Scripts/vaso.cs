@@ -13,6 +13,7 @@ public class vaso : MonoBehaviour
 
     private void Update()
     {
+        //actualizar los vlaores de cantidad dependiendo de la cantidad de objetos en las listas
         if (whiskey_cantidad != whiskey.Count) {
             whiskey_cantidad = whiskey.Count;
         }
@@ -20,12 +21,13 @@ public class vaso : MonoBehaviour
         {
             champagne_cantidad = champagne.Count;
         }
-
+        
         checkForDrinks();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //agregar los ingredientes a la lista que pertenecen cuando enstán dentro del vaso
         if (collision.gameObject.CompareTag("whis")) {
             whiskey.Add(collision.gameObject);
         }
@@ -37,6 +39,7 @@ public class vaso : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
+        //quitar los ingredientes a la lista que pertenecen cuando enstán fuera
         if (collision.gameObject.CompareTag("whis"))
         {
             whiskey.Remove(collision.gameObject);
@@ -47,6 +50,7 @@ public class vaso : MonoBehaviour
         }
     }
 
+    //checar si se cumplen los requerimientos de ingredientes para hacer una bebida
     public void checkForDrinks() {
         if (whiskey_cantidad > 60 && champagne_cantidad > 60) {
             drink_name = "mata-toros";

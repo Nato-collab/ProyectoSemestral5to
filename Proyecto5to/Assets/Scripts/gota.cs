@@ -15,6 +15,8 @@ public class gota : MonoBehaviour
         col = gameObject.GetComponent<Collider>();
         rigi = gameObject.GetComponent<Rigidbody>();
         mesh=GetComponentInChildren<MeshRenderer>();
+
+        //setear la gota para que sea traspasable e invisible
         mesh.enabled = false;
         col.enabled = false;
         emitida = false;
@@ -29,6 +31,7 @@ public class gota : MonoBehaviour
         }*/
     }
 
+    //quitar la gota del área de juego, y hacerla traspasabe e invisible
     public void pool_out() {
         mesh.enabled = false;
         transform.localPosition = Vector3.zero;
@@ -39,6 +42,7 @@ public class gota : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //hacer física la gota y darle un mejor efecto de expansión a las gotas cuando caen
         if (other.transform.CompareTag("vaso")|| other.transform.CompareTag("floor")) {
             col.enabled = true;
         }

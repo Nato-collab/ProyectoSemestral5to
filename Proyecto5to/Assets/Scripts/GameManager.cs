@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public SaveData SD;
     public int score;
-    public int spill_penalty;
+    public int spill_penalty;//ppuntos de penalización por tirar liquido al suelo
     // Start is called before the first frame update
     void Start()
     {

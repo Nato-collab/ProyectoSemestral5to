@@ -8,6 +8,7 @@ public class floor : MonoBehaviour
     public GameManager GM;
     private void OnCollisionEnter(Collision collision)
     {
+        //aplicar penalización cuando una gota/ingrediente caiga al suelo
         if (collision.gameObject.layer== LayerMask.NameToLayer("Gota")) {
             GM.score -= GM.spill_penalty;
         }

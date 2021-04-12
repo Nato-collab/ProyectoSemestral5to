@@ -220,7 +220,6 @@
     <Compile Include="Assets\Resources\TirgamesAssets\Utility\Scripts\TGUtilsAnimatedTexture.cs" />
     <Compile Include="Assets\Resources\TirgamesAssets\Utility\Scripts\TGUtilsAnimatorPeriodParam.cs" />
     <Compile Include="Assets\Resources\TirgamesAssets\Utility\Scripts\TGUtilsMaterialInstance.cs" />
-    <Compile Include="Assets\Scripts\Dont_traspass.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HandPresence.cs" />
     <Compile Include="Assets\Scripts\SaveData.cs" />
