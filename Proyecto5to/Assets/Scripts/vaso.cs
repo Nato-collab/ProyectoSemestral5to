@@ -35,6 +35,18 @@ public class vaso : MonoBehaviour
         }
     }
 
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("whis"))
+        {
+            whiskey.Remove(collision.gameObject);
+        }
+        if (collision.gameObject.CompareTag("cham"))
+        {
+            champagne.Remove(collision.gameObject);
+        }
+    }
+
     public void checkForDrinks() {
         if (whiskey_cantidad > 60 && champagne_cantidad > 60) {
             drink_name = "mata-toros";
