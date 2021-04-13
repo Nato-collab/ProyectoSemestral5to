@@ -222,6 +222,7 @@
     <Compile Include="Assets\Resources\TirgamesAssets\Utility\Scripts\TGUtilsMaterialInstance.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\HandPresence.cs" />
+    <Compile Include="Assets\Scripts\Ordenes_bebidas.cs" />
     <Compile Include="Assets\Scripts\SaveData.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\UI_in_game.cs" />
