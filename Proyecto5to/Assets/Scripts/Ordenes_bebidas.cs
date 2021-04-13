@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ordenes_bebidas : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Ordenes_bebidas : MonoBehaviour
     public GameManager GM;
     public int penalty_bebida_vacia;
     public bool recibir_bebida;
-    private float recive_time=1f;
+    private float recibe_time=1f;
+    public Text order_text;
+    public string order;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +21,32 @@ public class Ordenes_bebidas : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
+        if ("Preparar: " + order != order_text.text) {
+            order_text.text = "Preparar: " + order;
+        }
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.CompareTag("vaso")&&recibir_bebida) {
             recibir_bebida = false;
             vas = collision.gameObject.GetComponent<vaso>();
-            Invoke("bebidaCheck", recive_time);
+            Invoke("bebidaCheck", recibe_time);
+        }
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("vaso") && recibir_bebida)
+        {
+            recibir_bebida = false;
+            vas = other.gameObject.GetComponent<vaso>();
+            Invoke("bebidaCheck", recibe_time);
         }
     }
 
     private void bebidaCheck() {
-        if (vas.drink_name == "mata toros") {
+        if (vas.drink_name == "mata toros" && vas.drink_name == order) {
             if (vas.whiskey_cantidad > 70)
             {
                 GM.score += 70 - (vas.whiskey_cantidad - 70);

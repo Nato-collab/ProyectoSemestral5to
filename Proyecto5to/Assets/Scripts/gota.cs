@@ -43,7 +43,7 @@ public class gota : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //hacer física la gota y darle un mejor efecto de expansión a las gotas cuando caen
-        if (other.transform.CompareTag("vaso")|| other.transform.CompareTag("floor")) {
+        if (other.transform.CompareTag("vaso")|| other.transform.CompareTag("floor")|| other.transform.CompareTag("vaso_wall")) {
             col.enabled = true;
         }
     }

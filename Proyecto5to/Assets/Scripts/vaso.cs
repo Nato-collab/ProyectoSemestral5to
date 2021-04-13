@@ -10,6 +10,7 @@ public class vaso : MonoBehaviour
     public List<GameObject> whiskey;
     public List<GameObject> champagne;
     public Vector3 initial_pos;
+    public emisor_liquido emisor;
 
     // Start is called before the first frame update
     private void Start()
@@ -37,10 +38,12 @@ public class vaso : MonoBehaviour
         //agregar los ingredientes a la lista que pertenecen cuando enstán dentro del vaso
         if (collision.gameObject.CompareTag("whis")) {
             whiskey.Add(collision.gameObject);
+            collision.transform.tag = "gota";
         }
         if (collision.gameObject.CompareTag("cham"))
         {
             champagne.Add(collision.gameObject);
+            collision.transform.tag = "gota";
         }
     }
 
@@ -77,6 +80,7 @@ public class vaso : MonoBehaviour
                 champagne[i].GetComponent<gota>().pool_out();
             }
         }
+        emisor.pool_out();
         transform.position = initial_pos;
     }
 }

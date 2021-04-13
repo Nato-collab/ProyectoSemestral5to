@@ -9,6 +9,7 @@ TagManager:
   - floor
   - cham
   - whis
+  - vaso_wall
   layers:
   - Default
   - TransparentFX

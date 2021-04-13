@@ -8203,6 +8203,7 @@ MonoBehaviour:
   whiskey: []
   champagne: []
   initial_pos: {x: 0, y: 0, z: 0}
+  emisor: {fileID: 2082581433}
 --- !u!4 &782286143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6165916832787445008, guid: 81f7a98e56ef94c4cb210179961d7d6a,
@@ -22719,6 +22720,7 @@ GameObject:
   - component: {fileID: 1954214928}
   - component: {fileID: 1954214927}
   - component: {fileID: 1954214926}
+  - component: {fileID: 1954214931}
   m_Layer: 0
   m_Name: Order Reciber
   m_TagString: Untagged
@@ -22742,6 +22744,8 @@ MonoBehaviour:
   GM: {fileID: 1208937039}
   penalty_bebida_vacia: 100
   recibir_bebida: 0
+  order_text: {fileID: 1364130875}
+  order: mata toros
 --- !u!64 &1954214927
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -22817,6 +22821,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1954214931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954214925}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 2.2478027, z: 9.999999}
+  m_Center: {x: 0, y: 1.1239014, z: 0}
 --- !u!1001 &1956689651
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24105,6 +24122,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81f7a98e56ef94c4cb210179961d7d6a, type: 3}
+--- !u!114 &2082581433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5994343202070007836, guid: e36c4790fb9a6c9408dd066a44625c38,
+    type: 3}
+  m_PrefabInstance: {fileID: 5675666520050127802}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddc2568bc168e18499a08bacc58dc481, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2082800952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24923,7 +24952,7 @@ PrefabInstance:
     - target: {fileID: 5675666520131869341, guid: e36c4790fb9a6c9408dd066a44625c38,
         type: 3}
       propertyPath: m_Name
-      value: Botella
+      value: Whiskey
       objectReference: {fileID: 0}
     - target: {fileID: 5994343202070007836, guid: e36c4790fb9a6c9408dd066a44625c38,
         type: 3}
@@ -25082,7 +25111,7 @@ GameObject:
   - component: {fileID: 5675666521713447461}
   - component: {fileID: 5675666521713447460}
   m_Layer: 0
-  m_Name: Botella (1)
+  m_Name: Champagne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25095,6 +25124,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7781186097859701940, guid: b1692867e3d25d545a5b15f731f5c44e,
+        type: 3}
+      propertyPath: m_TagString
+      value: vaso_wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7781186097881060311, guid: b1692867e3d25d545a5b15f731f5c44e,
         type: 3}
       propertyPath: m_RootOrder
@@ -25154,6 +25188,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: vaso
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781186098477919378, guid: b1692867e3d25d545a5b15f731f5c44e,
+        type: 3}
+      propertyPath: m_TagString
+      value: vaso_wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781186098499890582, guid: b1692867e3d25d545a5b15f731f5c44e,
+        type: 3}
+      propertyPath: m_TagString
+      value: vaso_wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7781186099197754124, guid: b1692867e3d25d545a5b15f731f5c44e,
+        type: 3}
+      propertyPath: m_TagString
+      value: vaso_wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1692867e3d25d545a5b15f731f5c44e, type: 3}

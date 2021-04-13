@@ -61,7 +61,10 @@ public class emisor_liquido : MonoBehaviour
 
     //sacar de el área de juego a todas las gotas
     public void pool_out() {
-        for (int i = 0; i < instances.Count;i++) {
+        for (int i = 0; i < instances.Count; i++) {
+            if (instances[i] == null) {
+                break;
+            }
             scr_gota = instances[i].GetComponent<gota>();
             if (scr_gota.emitida) {
                 scr_gota.pool_out();
