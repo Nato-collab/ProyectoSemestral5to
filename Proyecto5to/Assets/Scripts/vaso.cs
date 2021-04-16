@@ -21,7 +21,7 @@ public class vaso : MonoBehaviour
 
     private void Update()
     {
-        //actualizar los vlaores de cantidad dependiendo de la cantidad de objetos en las listas
+        //actualizar los vlaores de cantidad dependiendo de la cantidad de objetos en las listas(información de cantidad para el developer)
         if (whiskey_cantidad != whiskey.Count) {
             whiskey_cantidad = whiskey.Count;
         }
@@ -49,7 +49,7 @@ public class vaso : MonoBehaviour
 
     /*private void OnCollisionExit(Collision collision)
     {
-        //quitar los ingredientes a la lista que pertenecen cuando enstán fuera
+        //quitar los ingredientes a la lista que pertenecen cuando enstán fuera del vaso
         if (collision.gameObject.CompareTag("whis"))
         {
             whiskey.Remove(collision.gameObject);
@@ -67,6 +67,7 @@ public class vaso : MonoBehaviour
         }
     }
 
+    //resetear las gotas que contiene el vaso por cada tipo de liquido y la pocición del vaso
     public void Reset_vaso() {
         if (whiskey_cantidad > 0) {
             for (int i = 0; i < whiskey.Count; i++) {
@@ -80,7 +81,7 @@ public class vaso : MonoBehaviour
                 champagne[i].GetComponent<gota>().pool_out();
             }
         }
-        emisor.pool_out();
+        emisor.pool_out();//resetear las que se hallan caido al suelo
         transform.position = initial_pos;
     }
 }

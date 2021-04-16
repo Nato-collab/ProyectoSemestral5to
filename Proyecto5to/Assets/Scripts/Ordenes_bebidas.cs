@@ -21,6 +21,7 @@ public class Ordenes_bebidas : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        //mostrar que bebida va a preparar al jugador
         if ("Preparar: " + order != order_text.text) {
             order_text.text = "Preparar: " + order;
         }
@@ -37,6 +38,7 @@ public class Ordenes_bebidas : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        //cuando el vaso entra en el area de rivisión, se empiza a hacer el chequeo de los puntos ganados por preparar la bebida
         if (other.transform.CompareTag("vaso") && recibir_bebida)
         {
             recibir_bebida = false;
@@ -45,31 +47,44 @@ public class Ordenes_bebidas : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit(Collider other)
+    {
+        //cuando el vaso sale de la zona de revivsión, se cancela el chequeo de puntos
+        if (other.transform.CompareTag("vaso"))
+        {
+            recibir_bebida = true;
+            CancelInvoke("bebidaCheck");
+        }
+    }
+
+    //revisión de puntos
     private void bebidaCheck() {
         if (vas.drink_name == "mata toros" && vas.drink_name == order) {
-            if (vas.whiskey_cantidad > 70)
+            if (vas.whiskey_cantidad > 70)//penalización si se pasó de cantidad
             {
                 GM.score += 70 - (vas.whiskey_cantidad - 70);
             }
-            else {
+            else //penalización si le faltó cantidad
+            {
                 GM.score += 70 + (vas.whiskey_cantidad - 70);
             }
-            if (vas.champagne_cantidad > 70)
+
+            if (vas.champagne_cantidad > 70)//penalización si se pasó de cantidad
             {
                 GM.score += 70 - (vas.champagne_cantidad - 70);
             }
-            else
+            else//penalización si le faltó cantidad
             {
                 GM.score += 70 + (vas.champagne_cantidad - 70);
             }
         }
 
-        if (vas.drink_name == "")
+        if (vas.drink_name == "")//penalización si entrega un vaso sin bebida
         {
             GM.score -= penalty_bebida_vacia;
         }
 
-        vas.Reset_vaso();
+        vas.Reset_vaso();//resetear la pocición y el contenido del vaso 
         recibir_bebida = true;
     }
 }
